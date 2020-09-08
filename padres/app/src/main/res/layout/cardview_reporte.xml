@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_main_1_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:foreground="?attr/selectableItemBackground"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="2dp"
+    android:layout_marginHorizontal="20dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+
+        <RelativeLayout
+            android:id="@+id/centroLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@drawable/ic_home_s"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_marginLeft="10dp"
+                android:tint="@color/lime_600"
+                android:layout_centerVertical="true"
+                />
+
+            <TextView
+                android:id="@+id/centro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="60dp"
+
+                android:fontFamily="sans-serif-light"
+                android:text="Nombre del centro educativo"
+                android:textColor="@color/lime_600"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+
+                android:fontFamily="sans-serif-light"
+                android:text="Jornada, Dirección del centro"
+                android:textColor="#9E9E9E"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fechaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/centroLayout">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@drawable/ic_fecha_s"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:tint="@color/lime_600"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="60dp"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="sans-serif-light"
+                android:text="Fecha de envío:"
+                android:textColor="@color/lime_600"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="150dp"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="sans-serif-light"
+                android:text="30-04-2020"
+                android:textColor="#9E9E9E"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reportadoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/fechaLayout">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@drawable/ic_reportado_s"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:tint="@color/lime_600"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="60dp"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="sans-serif-light"
+                android:text="Reportado:"
+                android:textColor="@color/lime_600"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/reportado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="125dp"
+                android:layout_centerVertical="true"
+
+                android:fontFamily="sans-serif-light"
+                android:text="30-04-2020"
+                android:textColor="#9E9E9E"
+                android:textSize="12dp"
+                android:textStyle="bold"/>
+
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lime_600"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+
+                android:fontFamily="@font/baloo"
+                android:text="- No se impartieron ciertas materias -"
+                android:textColor="@android:color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/lime_600"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_marginTop="5dp"
+
+                        android:fontFamily="@font/baloo"
+                        android:text="¿En que grado no se impartieron las materias?"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="2dp">
+
+                    <EditText
+                        android:id="@+id/et_grado"
+                        style="@style/EditText.Flat.Grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xmlarge"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/edit_text_round_bg_overlay_white"
+                        android:drawableEnd="@drawable/ic_arrow_drop"
+                        android:drawableRight="@drawable/ic_arrow_drop"
+                        android:drawableTint="@android:color/black"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:minHeight="@dimen/spacing_xmlarge"
+                        android:paddingLeft="@dimen/spacing_middle"
+                        android:paddingRight="@dimen/spacing_middle"
+                        android:text="Seleccionar grado"
+                        android:textColor="@android:color/black" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@color/lime_600"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tbToogle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+
+                        android:fontFamily="@font/baloo"
+                        android:text="Seleccione TODAS las materias que no se impartieron"
+                        android:textColor="@android:color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_materias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Matemáticas"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Culturas e Idiomas Mayas, Garífuna o Xinca"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Comunicación y Lenguaje, Idioma Español"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Comunicación y Lenguaje, Idioma Extranjero"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Ciencias Naturales"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Ciencias Sociales"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Educación Artística"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Emprendimiento para la Productividad"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tecnologías del Aprendizaje y la Comunicación"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_medium"
+                            android:paddingRight="@dimen/spacing_medium">
+
+                            <ImageButton
+                                android:layout_width="@dimen/spacing_xmlarge"
+                                android:layout_height="@dimen/spacing_xmlarge"
+                                android:background="@android:color/transparent"
+                                android:tint="@color/yellow_800"
+                                app:srcCompat="@drawable/ic_school" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Educación Física"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_90" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_small"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <View
+                                android:layout_width="@dimen/spacing_middle"
+                                android:layout_height="wrap_content" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/cnb10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="false"
+                                app:thumbTint="@color/switch_color_primary" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_periodos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="2dp">
+
+                    <EditText
+                        android:id="@+id/et_periodos"
+                        style="@style/EditText.Flat.Grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xmlarge"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/edit_text_round_bg_overlay_white"
+                        android:drawableEnd="@drawable/ic_arrow_drop"
+                        android:drawableRight="@drawable/ic_arrow_drop"
+                        android:drawableTint="@android:color/black"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:minHeight="@dimen/spacing_xmlarge"
+                        android:paddingLeft="@dimen/spacing_middle"
+                        android:paddingRight="@dimen/spacing_middle"
+                        android:text="1"
+                        android:textColor="@android:color/black" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</FrameLayout>
